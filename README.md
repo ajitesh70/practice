@@ -129,60 +129,6 @@ Remove package with configurations:
 |-------------------------------|-----------------------------------------------------------------|------------------------------------------------------------|
 | APT Manual Page               | https://manpages.ubuntu.com/manpages/jammy/en/man8/apt.8.html   | Ref for command syntax and operational details of APT.     |
 | APT Package Manager Overview  | https://phoenixnap.com/kb/apt-package-manager                   | Comprehensive guide explaining the functions and operations of the APT package manager
-# SOP for Common Linux Commands
-
-
-<p align="center">
-  <img width="200" height="300" alt="Linux Logo" src="https://www.freepnglogos.com/uploads/linux-png/image-linux-logo-recommended-games-wiki-2.png" />
-</p>
 
 
 
-
-
-## Table of Contents
-
-- [Introduction](#Introduction)
-- [Prerequisites](#prerequisites)
-- [Common Commands](#common-commands)
-  - [System Information & Monitoring](#a-system-information--monitoring)
-  - [User & Permissions Management](#b-user--permissions-management)
-  - [File & Directory Operations](#c-file--directory-operations)
-  - [Network & Connectivity](#d-network--connectivity)
-  - [Process & Service Management](#e-process--service-management)
-  - [Package & System Updates](#f-package--system-updates)
-  - [Logs & Debugging](#g-logs--debugging)
-  - [Troubleshooting Commands](#h-troubleshooting-commands)
-- [References](#references)
-
----
-
-## Introduction
-
-
-The purpose of this SOP is to provide a **centralized reference** of essential Linux commands for managing, monitoring, and troubleshooting the **virtual machine (VM)**.
-It standardizes DevOps operations and minimizes errors during setup and maintenance.
-
-
----
-
-## Prerequisites
-
-Before executing any commands, ensure the following:
-
-
-| **Category**                | **Prerequisites / Requirements**                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------------------------------ |
-| **System Access**           | Access to a Linux system (local/remote); valid user credentials; basic terminal knowledge              |
-| **User Permissions**        | Normal user for basic commands; `sudo` or root privileges for admin tasks; ensure `sudo` is configured |
-| **Linux Distribution**      | Identify distro (Ubuntu, CentOS, RHEL, etc.); know the package manager (`apt`, `yum`, `dnf`, `zypper`) |
-| **Network Connectivity**    | Internet or LAN access if needed; verify using `ping` or `curl`                                        |
-| **Command Availability**    | Confirm core utilities installed: `ls`, `cat`, `grep`, `awk`, `find`, `tar`, `vi`, etc.                |
-| **Environment Setup**       | Ensure correct `$PATH` (`/bin`, `/usr/bin`, `/usr/local/bin`); shell available (`bash`, `zsh`)         |
-
----|
-| [Go Language Docs](https://golang.org/doc/) | Official Go documentation |
-| [Python Docs](https://docs.python.org/3/) | Official Python documentation |
-| [Java Docs](https://docs.oracle.com/en/java/) | Official Java documentation |
-
----
