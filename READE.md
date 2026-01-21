@@ -2,7 +2,7 @@
 
 | Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
 |--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
-| Ajitesh | 21-01-2026 | v1.0 | Ajitesh | NA | NA | NA | NA |
+| Ajitesh Singh | 21-01-2026 | v1.1 | Ajitesh Singh | NA | NA | NA | NA |
 
 ---
 
@@ -12,12 +12,7 @@
 - [Pre-requisites](#pre-requisites)
 - [Purpose](#purpose)
 - [Key Features](#key-features)
-- [Getting Started](#getting-started)
-- [Software Overview](#software-overview)
-- [System Requirement](#system-requirement)
-- [Important Ports](#important-ports)
-- [Dependencies](#dependencies)
-- [How to Setup / Install](#how-to-setup--install)
+- [Environment Verification](#environment-verification)
 - [Command Reference](#command-reference)
   - [System Monitoring](#system-monitoring)
   - [File Operations](#file-operations)
@@ -31,7 +26,9 @@
 
 ## Introduction
 
-This document provides a Standard Operating Procedure (SOP) for commonly used Linux commands. It enables users to perform basic system tasks such as monitoring system resources, managing files, validating network connectivity, and controlling running services safely and efficiently.
+This document provides a Standard Operating Procedure (SOP) for frequently used Linux commands. It helps users perform basic system tasks such as monitoring system health, managing files, checking network connectivity, and controlling running processes.
+
+The SOP focuses on clarity, correctness, and practical usage.
 
 ---
 
@@ -42,17 +39,17 @@ This document provides a Standard Operating Procedure (SOP) for commonly used Li
 | Operating System | Linux-based system |
 | User Access | Valid login credentials |
 | Privileges | Sudo access when required |
-| Terminal Access | Command-line interface |
-| Basic Knowledge | Familiarity with Linux commands |
+| Terminal | Command-line interface |
+| Basic Knowledge | Familiarity with Linux shell |
 
 ---
 
 ## Purpose
 
-- Provide consistent command usage  
+- Standardize usage of common Linux commands  
 - Improve operational efficiency  
-- Reduce human errors  
-- Support troubleshooting activities  
+- Reduce execution errors  
+- Support troubleshooting and learning  
 
 ---
 
@@ -60,76 +57,26 @@ This document provides a Standard Operating Procedure (SOP) for commonly used Li
 
 | Feature | Description |
 |--------|-------------|
-| Beginner Friendly | Simple and practical |
-| Clear Examples | Commands shown clearly |
-| Structured Format | Easy navigation |
-| Platform Independent | Works on most Linux systems |
-| Operational Ready | Production safe usage |
+| Simple Commands | Easy to understand syntax |
+| Real Examples | Commands reflect real usage |
+| Structured Layout | Categorized for clarity |
+| Distribution Independent | Works on most Linux systems |
+| Operational Ready | Safe for daily operations |
 
 ---
 
-## Getting Started
+## Environment Verification
 
-### License
+No installation is required. Most Linux distributions include the required commands by default.
 
-| License Type | Description | Commercial Use | Open Source |
-|--------------|-------------|----------------|-------------|
-| GNU GPL | Free and open-source | Yes | Yes |
-
----
-
-## Software Overview
-
-| Software | Version |
-|----------|---------|
-| Linux Shell (bash) | Default |
-
----
-
-## System Requirement
-
-| Requirement | Minimum Recommendation |
-|-------------|------------------------|
-| Processor | Dual Core |
-| RAM | 2 GB or higher |
-| Disk Space | 10 GB or higher |
-| OS Required | Linux |
-
----
-
-## Important Ports
-
-| Port | Description |
-|------|-------------|
-| 22 | SSH remote access |
-| 80 | Web services |
-| 443 | Secure web services |
-
----
-
-## Dependencies
-
-### Run-time Dependency
-
-| Dependency | Version | Description |
-|------------|---------|-------------|
-| Bash | Default | Command execution |
-| Coreutils | Default | File and system utilities |
-
-### Other Dependency
-
-| Dependency | Version | Description |
-|------------|---------|-------------|
-| Curl | Latest | API testing |
-| Net-tools | Latest | Network utilities |
-
----
-
-## How to Setup / Install
-
-Verify user access:
+Verify user identity:
 ```
 whoami
+```
+
+Verify shell availability:
+```
+echo $SHELL
 ```
 
 Verify basic command availability:
@@ -202,9 +149,9 @@ journalctl -xe
 
 ## Contact
 
-| Name | Email | GitHub |
-|------|--------|--------|
-| Ajitesh | ajitesh.singh.snaatak@mygurukulam.co | ajitesh0007 |
+| Name | Email Address | GitHub | URL |
+|------|---------------|--------|-----|
+| Ajitesh Singh | ajitesh.singh.snaatak@mygurukulam.co | ajitesh0007 | https://github.com/ajitesh0007 |
 
 ---
 
@@ -212,8 +159,8 @@ journalctl -xe
 
 | Link | Description |
 |------|-------------|
-| https://linuxcommand.org | Linux documentation |
+| https://linuxcommand.org | Linux command documentation |
 | https://man7.org/linux/man-pages | Linux manual pages |
-| https://ubuntu.com/server/docs | Ubuntu documentation |
+| https://ubuntu.com/server/docs | Ubuntu server documentation |
 
 ---
