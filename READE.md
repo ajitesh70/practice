@@ -1,135 +1,219 @@
-# SOP for Disk Management and ulimit Configuration
-**Project:** OT Microservices Platform
-**Repository:** [https://github.com/OT-MICROSERVICES](https://github.com/OT-MICROSERVICES)
-**Author:** Anirudh
-**Sprint:** 0
+# SOP: Common Linux Commands
+
+| Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
+|--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
+| Ajitesh | 21-01-2026 | v1.0 | Ajitesh | NA | NA | NA | NA |
+
 ---
-## 📑 Table of Contents
-1. [Introduction](#1-introduction)
-2. [Prerequisites](#2-prerequisites)
-3. [Procedure](#3-procedure)
-   * [Checking Disk Usage](#31-checking-disk-usage)
-   * [Checking Mount Points](#32-checking-mount-points)
-   * [Configuring ulimit Settings](#33-configuring-ulimit-settings)
-4. [Best Practices](#4-best-practices)
-5. [Troubleshooting Tips](#5-troubleshooting-tips)
-6. [Contact Information](#6-contact-information)
-7. [References](#7-references)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Pre-requisites](#pre-requisites)
+- [Purpose](#purpose)
+- [Key Features](#key-features)
+- [Getting Started](#getting-started)
+- [Software Overview](#software-overview)
+- [System Requirement](#system-requirement)
+- [Important Ports](#important-ports)
+- [Dependencies](#dependencies)
+- [How to Setup / Install](#how-to-setup--install)
+- [Command Reference](#command-reference)
+  - [System Monitoring](#system-monitoring)
+  - [File Operations](#file-operations)
+  - [User & Permission Commands](#user--permission-commands)
+  - [Network Commands](#network-commands)
+  - [Process & Service Commands](#process--service-commands)
+- [Contact](#contact)
+- [References](#references)
+
 ---
-## 1. Introduction
-This Standard Operating Procedure (SOP) defines the process for **disk management** and **resource limit (ulimit) configuration** on Ubuntu systems used in the **OT Microservices Platform**.
-Microservices running in this platform depend on:
-* Stable disk availability
-* Correct mount point configuration
-* Proper process-level resource limits
-Incorrect disk or ulimit settings may cause:
-* Runtime failures
-* File descriptor exhaustion
-* Service instability or downtime
-This SOP standardizes operational steps to ensure reliability across all OT Microservices nodes.
+
+## Introduction
+
+This document provides a Standard Operating Procedure (SOP) for commonly used Linux commands. It enables users to perform basic system tasks such as monitoring system resources, managing files, validating network connectivity, and controlling running services safely and efficiently.
+
 ---
-## 2. Prerequisites
-Before performing disk or ulimit operations, ensure:
-* Ubuntu Linux system hosting OT microservices
-* SSH or terminal access to the node
-* `sudo` privileges
-* Basic understanding of Linux filesystems and services
-Verify access:
-```bash
+
+## Pre-requisites
+
+| Requirement | Description |
+|-------------|-------------|
+| Operating System | Linux-based system |
+| User Access | Valid login credentials |
+| Privileges | Sudo access when required |
+| Terminal Access | Command-line interface |
+| Basic Knowledge | Familiarity with Linux commands |
+
+---
+
+## Purpose
+
+- Provide consistent command usage  
+- Improve operational efficiency  
+- Reduce human errors  
+- Support troubleshooting activities  
+
+---
+
+## Key Features
+
+| Feature | Description |
+|--------|-------------|
+| Beginner Friendly | Simple and practical |
+| Clear Examples | Commands shown clearly |
+| Structured Format | Easy navigation |
+| Platform Independent | Works on most Linux systems |
+| Operational Ready | Production safe usage |
+
+---
+
+## Getting Started
+
+### License
+
+| License Type | Description | Commercial Use | Open Source |
+|--------------|-------------|----------------|-------------|
+| GNU GPL | Free and open-source | Yes | Yes |
+
+---
+
+## Software Overview
+
+| Software | Version |
+|----------|---------|
+| Linux Shell (bash) | Default |
+
+---
+
+## System Requirement
+
+| Requirement | Minimum Recommendation |
+|-------------|------------------------|
+| Processor | Dual Core |
+| RAM | 2 GB or higher |
+| Disk Space | 10 GB or higher |
+| OS Required | Linux |
+
+---
+
+## Important Ports
+
+| Port | Description |
+|------|-------------|
+| 22 | SSH remote access |
+| 80 | Web services |
+| 443 | Secure web services |
+
+---
+
+## Dependencies
+
+### Run-time Dependency
+
+| Dependency | Version | Description |
+|------------|---------|-------------|
+| Bash | Default | Command execution |
+| Coreutils | Default | File and system utilities |
+
+### Other Dependency
+
+| Dependency | Version | Description |
+|------------|---------|-------------|
+| Curl | Latest | API testing |
+| Net-tools | Latest | Network utilities |
+
+---
+
+## How to Setup / Install
+
+Verify user access:
+```
 whoami
 ```
+
+Verify basic command availability:
+```
+ls --version
+```
+
 ---
-<img width="1075" height="166" alt="image" src="https://github.com/user-attachments/assets/4f247fb8-4cf0-4fa4-ac96-d8cabeaabe97" />
-## 3. Procedure
-### 3.1 Checking Disk Usage
-Check overall disk usage:
-```bash
+
+## Command Reference
+
+### System Monitoring
+```
+uptime
+free -h
 df -h
+top
+hostname
 ```
-Displays total size, used space, available space, and mount points.
-Check disk usage for application-relevant directories (example: logs, volumes):
-```bash
-du -sh /var/*
-```
-Helps identify directories consuming excessive disk space.
-List disks and partitions:
-```bash
-lsblk
-```
+
 ---
-### 3.2 Checking Mount Points
-View all mounted filesystems:
-```bash
-mount | column -t
+
+### File Operations
 ```
-Verify persistent mount configuration:
-```bash
-cat /etc/fstab
+pwd
+ls -lh
+mkdir demo
+touch demo.txt
+cp demo.txt backup.txt
+mv backup.txt archive.txt
+rm archive.txt
+cat demo.txt
 ```
-Ensures required volumes are mounted automatically after reboot.
-Check usage of a specific mount point:
-```bash
-df -h /mount-point
-```
+
 ---
-### 3.3 Configuring ulimit Settings
-Check current ulimit values:
-```bash
-ulimit -a
+
+### User & Permission Commands
 ```
-Set a temporary ulimit value (current session only):
-```bash
-ulimit -n 65535
+whoami
+id
+groups
+chmod 755 script.sh
+chown user:user file.txt
+passwd user1
 ```
-Configure permanent ulimit settings for the OT Microservices user:
-Edit limits configuration:
-```bash
-sudo vi /etc/security/limits.conf
-```
-Add:
-```bash
-anirudh soft nofile 65535
-anirudh hard nofile 65535
-```
-Configure ulimit for systemd-managed microservices:
-```bash
-sudo systemctl edit <service-name>
-```
-Add:
-```ini
-[Service]
-LimitNOFILE=65535
-```
-Reload systemd and restart service:
-```bash
-sudo systemctl daemon-reexec
-sudo systemctl restart <service-name>
-```
+
 ---
-## 4. Best Practices
-* Monitor disk usage regularly on microservice nodes
-* Maintain consistent mount points across environments (dev, stage, prod)
-* Apply ulimit settings before deploying new services
-* Avoid unlimited resource values unless explicitly required
-* Always restart services after modifying ulimit configurations
+
+### Network Commands
+```
+ip a
+ping google.com
+curl http://localhost
+ss -tunlp
+hostname -I
+```
+
 ---
-## 5. Troubleshooting Tips
-| Issue                   | Solution                              |
-| ----------------------- | ------------------------------------- |
-| Disk space full         | `du -sh /*`                           |
-| Mount not available     | `mount -a`                            |
-| ulimit not applied      | Log out and log in again              |
-| Service ignoring limits | Verify systemd override configuration |
+
+### Process & Service Commands
+```
+ps aux
+kill <pid>
+systemctl status ssh
+systemctl restart ssh
+journalctl -xe
+```
+
 ---
-## 6. Contact Information
-**Owner:** Anirudh
-**Project:** OT Microservices Platform
+
+## Contact
+
+| Name | Email | GitHub |
+|------|--------|--------|
+| Ajitesh | ajitesh@example.com | ajitesh |
+
 ---
-## 7. References
-| Topic              | Link                                                                                                                                     | Description             |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
-| Disk Usage         | [https://manpages.ubuntu.com/manpages/jammy/en/man1/df.1.html](https://manpages.ubuntu.com/manpages/jammy/en/man1/df.1.html)             | Disk usage command      |
-| Disk Usage (du)    | [https://manpages.ubuntu.com/manpages/jammy/en/man1/du.1.html](https://manpages.ubuntu.com/manpages/jammy/en/man1/du.1.html)             | Directory size analysis |
-| ulimit / setrlimit | [https://man7.org/linux/man-pages/man2/setrlimit.2.html](https://man7.org/linux/man-pages/man2/setrlimit.2.html)                         | Linux resource limits   |
-| systemd Limits     | [https://www.freedesktop.org/software/systemd/man/systemd.exec.html](https://www.freedesktop.org/software/systemd/man/systemd.exec.html) | Service-level limits    |
+
+## References
+
+| Link | Description |
+|------|-------------|
+| https://linuxcommand.org | Linux documentation |
+| https://man7.org/linux/man-pages | Linux manual pages |
+| https://ubuntu.com/server/docs | Ubuntu documentation |
+
 ---
