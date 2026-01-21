@@ -2,7 +2,7 @@
 
 | Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
 |--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
-| Ajitesh Singh | 21-01-2026 | v1.1 | Ajitesh Singh | NA | NA | NA | NA |
+| Ajitesh Singh | 21-01-2026 | v1.2 | Ajitesh Singh | NA | NA | NA | NA |
 
 ---
 
@@ -26,9 +26,7 @@
 
 ## Introduction
 
-This document provides a Standard Operating Procedure (SOP) for frequently used Linux commands. It helps users perform basic system tasks such as monitoring system health, managing files, checking network connectivity, and controlling running processes.
-
-The SOP focuses on clarity, correctness, and practical usage.
+This document provides a Standard Operating Procedure (SOP) for frequently used Linux commands. It helps users perform basic system tasks such as monitoring system health, managing files, validating network connectivity, and controlling running processes.
 
 ---
 
@@ -57,93 +55,89 @@ The SOP focuses on clarity, correctness, and practical usage.
 
 | Feature | Description |
 |--------|-------------|
-| Simple Commands | Easy to understand syntax |
-| Real Examples | Commands reflect real usage |
-| Structured Layout | Categorized for clarity |
-| Distribution Independent | Works on most Linux systems |
-| Operational Ready | Safe for daily operations |
+| Easy to Read | Tabular format |
+| Real Examples | Practical commands |
+| Logical Grouping | Categorized sections |
+| Beginner Friendly | Simple language |
+| Operational Ready | Production safe |
 
 ---
 
 ## Environment Verification
 
-No installation is required. Most Linux distributions include the required commands by default.
+No installation is required. Most Linux distributions include the required tools.
 
-Verify user identity:
-```
-whoami
-```
-
-Verify shell availability:
-```
-echo $SHELL
-```
-
-Verify basic command availability:
-```
-ls --version
-```
+| Command | Purpose | Example |
+|--------|---------|---------|
+| `whoami` | Verify current user | `whoami` |
+| `echo $SHELL` | Check active shell | `echo $SHELL` |
+| `ls --version` | Verify command availability | `ls --version` |
 
 ---
 
 ## Command Reference
 
 ### System Monitoring
-```
-uptime
-free -h
-df -h
-top
-hostname
-```
+
+| Command | Description | Example |
+|--------|-------------|---------|
+| `uptime` | Shows system running time | `uptime` |
+| `free -h` | Displays memory usage | `free -h` |
+| `df -h` | Shows disk usage | `df -h` |
+| `top` | Displays running processes | `top` |
+| `hostname` | Shows system name | `hostname` |
 
 ---
 
 ### File Operations
-```
-pwd
-ls -lh
-mkdir demo
-touch demo.txt
-cp demo.txt backup.txt
-mv backup.txt archive.txt
-rm archive.txt
-cat demo.txt
-```
+
+| Command | Description | Example |
+|--------|-------------|---------|
+| `pwd` | Shows current directory | `pwd` |
+| `ls -lh` | Lists files with details | `ls -lh` |
+| `mkdir demo` | Creates directory | `mkdir demo` |
+| `touch demo.txt` | Creates file | `touch demo.txt` |
+| `cp demo.txt backup.txt` | Copies file | `cp demo.txt backup.txt` |
+| `mv backup.txt archive.txt` | Renames file | `mv backup.txt archive.txt` |
+| `rm archive.txt` | Deletes file | `rm archive.txt` |
+| `cat demo.txt` | Displays file content | `cat demo.txt` |
 
 ---
 
 ### User & Permission Commands
-```
-whoami
-id
-groups
-chmod 755 script.sh
-chown user:user file.txt
-passwd user1
-```
+
+| Command | Description | Example |
+|--------|-------------|---------|
+| `whoami` | Displays logged-in user | `whoami` |
+| `id` | Shows user identity | `id` |
+| `groups` | Displays user groups | `groups` |
+| `chmod 755 script.sh` | Changes permissions | `chmod 755 script.sh` |
+| `chown user:user file.txt` | Changes ownership | `chown user:user file.txt` |
+| `passwd user1` | Changes password | `passwd user1` |
 
 ---
 
 ### Network Commands
-```
-ip a
-ping google.com
-curl http://localhost
-ss -tunlp
-hostname -I
-```
+
+| Command | Description | Example |
+|--------|-------------|---------|
+| `ip a` | Shows IP addresses | `ip a` |
+| `ping google.com` | Tests connectivity | `ping google.com` |
+| `curl http://localhost` | Tests URL/API | `curl http://localhost` |
+| `ss -tunlp` | Shows listening ports | `ss -tunlp` |
+| `hostname -I` | Displays system IP | `hostname -I` |
 
 ---
 
 ### Process & Service Commands
-```
-ps aux
-kill <pid>
-systemctl status ssh
-systemctl restart ssh
-journalctl -xe
-```
+
+| Command | Description | Example |
+|--------|-------------|---------|
+| `ps aux` | Lists running processes | `ps aux` |
+| `kill <pid>` | Terminates process | `kill 1234` |
+| `systemctl status ssh` | Checks service status | `systemctl status ssh` |
+| `systemctl restart ssh` | Restarts service | `systemctl restart ssh` |
+| `journalctl -xe` | Displays system logs | `journalctl -xe` |
 
 ---
 
