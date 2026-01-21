@@ -2,7 +2,7 @@
 
 | Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
 |--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
-| Ajitesh Singh | 21-01-2026 | v1 | Ajitesh Singh | NA | NA | NA | NA |
+| Ajitesh Singh | 21-01-2026 | v1 | Ajitesh Singh | Neha, Anirudh, Rahul | Komal Jaiswal | Akshit Kapil | Mahesh |
 
 ---
 
