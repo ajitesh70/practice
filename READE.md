@@ -2,7 +2,7 @@
 
 | Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
 |--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
-| Ajitesh Singh | 21-01-2026 | v1.2 | Ajitesh Singh | NA | NA | NA | NA |
+| Ajitesh Singh | 21-01-2026 | v1.3 | Ajitesh Singh | NA | NA | NA | NA |
 
 ---
 
@@ -56,7 +56,7 @@ This document provides a Standard Operating Procedure (SOP) for frequently used 
 | Feature | Description |
 |--------|-------------|
 | Easy to Read | Tabular format |
-| Real Examples | Practical commands |
+| Real Examples | Practical usage |
 | Logical Grouping | Categorized sections |
 | Beginner Friendly | Simple language |
 | Operational Ready | Production safe |
@@ -65,13 +65,11 @@ This document provides a Standard Operating Procedure (SOP) for frequently used 
 
 ## Environment Verification
 
-No installation is required. Most Linux distributions include the required tools.
-
-| Command | Purpose | Example |
-|--------|---------|---------|
-| `whoami` | Verify current user | `whoami` |
-| `echo $SHELL` | Check active shell | `echo $SHELL` |
-| `ls --version` | Verify command availability | `ls --version` |
+| Command | Description | Example |
+|--------|-------------|---------|
+| `whoami` | Displays current user | `whoami` |
+| `echo $SHELL` | Shows active shell | `/bin/bash` |
+| `ls --version` | Verifies command availability | `ls (GNU coreutils) 9.1` |
 
 ---
 
@@ -81,11 +79,11 @@ No installation is required. Most Linux distributions include the required tools
 
 | Command | Description | Example |
 |--------|-------------|---------|
-| `uptime` | Shows system running time | `uptime` |
-| `free -h` | Displays memory usage | `free -h` |
-| `df -h` | Shows disk usage | `df -h` |
-| `top` | Displays running processes | `top` |
-| `hostname` | Shows system name | `hostname` |
+| `uptime` | Shows system running time | `uptime → 2:10 up 3 days, load average: 0.05` |
+| `free -h` | Displays memory usage | `free -h → Mem: 7.7Gi used` |
+| `df -h` | Shows disk utilization | `df -h → /dev/sda1 40% used` |
+| `top` | Displays live processes | `top → PID 1203 nginx using CPU` |
+| `hostname` | Shows system name | `hostname → web-server-01` |
 
 ---
 
@@ -93,14 +91,14 @@ No installation is required. Most Linux distributions include the required tools
 
 | Command | Description | Example |
 |--------|-------------|---------|
-| `pwd` | Shows current directory | `pwd` |
-| `ls -lh` | Lists files with details | `ls -lh` |
-| `mkdir demo` | Creates directory | `mkdir demo` |
-| `touch demo.txt` | Creates file | `touch demo.txt` |
-| `cp demo.txt backup.txt` | Copies file | `cp demo.txt backup.txt` |
-| `mv backup.txt archive.txt` | Renames file | `mv backup.txt archive.txt` |
-| `rm archive.txt` | Deletes file | `rm archive.txt` |
-| `cat demo.txt` | Displays file content | `cat demo.txt` |
+| `pwd` | Displays current directory | `/home/ubuntu/projects` |
+| `ls -lh` | Lists files in detail | `config.yml 2K README.md 5K` |
+| `mkdir <dir>` | Creates directory | `mkdir logs` |
+| `touch <file>` | Creates empty file | `touch notes.txt` |
+| `cp <src> <dest>` | Copies file | `cp report.txt backup.txt` |
+| `mv <src> <dest>` | Renames/moves file | `mv old.log new.log` |
+| `rm <file>` | Deletes file | `rm temp.txt` |
+| `cat <file>` | Displays file content | `cat notes.txt → Hello World` |
 
 ---
 
@@ -108,12 +106,12 @@ No installation is required. Most Linux distributions include the required tools
 
 | Command | Description | Example |
 |--------|-------------|---------|
-| `whoami` | Displays logged-in user | `whoami` |
-| `id` | Shows user identity | `id` |
-| `groups` | Displays user groups | `groups` |
-| `chmod 755 script.sh` | Changes permissions | `chmod 755 script.sh` |
-| `chown user:user file.txt` | Changes ownership | `chown user:user file.txt` |
-| `passwd user1` | Changes password | `passwd user1` |
+| `whoami` | Shows logged-in user | `ubuntu` |
+| `id <user>` | Displays user identity | `id ubuntu → uid=1000` |
+| `groups` | Shows user groups | `groups → sudo docker` |
+| `chmod <mode> <file>` | Changes permissions | `chmod 755 app.sh` |
+| `chown <user>:<grp> <file>` | Changes ownership | `chown root:root config.conf` |
+| `passwd <user>` | Changes password | `passwd devuser` |
 
 ---
 
@@ -121,11 +119,11 @@ No installation is required. Most Linux distributions include the required tools
 
 | Command | Description | Example |
 |--------|-------------|---------|
-| `ip a` | Shows IP addresses | `ip a` |
-| `ping google.com` | Tests connectivity | `ping google.com` |
-| `curl http://localhost` | Tests URL/API | `curl http://localhost` |
-| `ss -tunlp` | Shows listening ports | `ss -tunlp` |
-| `hostname -I` | Displays system IP | `hostname -I` |
+| `ip a` | Displays IP addresses | `eth0 → 192.168.1.10` |
+| `ping <host>` | Tests connectivity | `ping google.com → time=20ms` |
+| `curl <url>` | Tests HTTP endpoint | `curl http://localhost:8080/health` |
+| `ss -tunlp` | Shows listening ports | `LISTEN 0.0.0.0:22` |
+| `hostname -I` | Shows system IP | `192.168.1.10` |
 
 ---
 
@@ -133,11 +131,11 @@ No installation is required. Most Linux distributions include the required tools
 
 | Command | Description | Example |
 |--------|-------------|---------|
-| `ps aux` | Lists running processes | `ps aux` |
+| `ps aux` | Lists running processes | `nginx PID 1234 running` |
 | `kill <pid>` | Terminates process | `kill 1234` |
-| `systemctl status ssh` | Checks service status | `systemctl status ssh` |
-| `systemctl restart ssh` | Restarts service | `systemctl restart ssh` |
-| `journalctl -xe` | Displays system logs | `journalctl -xe` |
+| `systemctl status <svc>` | Shows service status | `systemctl status nginx → active` |
+| `systemctl restart <svc>` | Restarts service | `systemctl restart nginx` |
+| `journalctl -xe` | Displays system logs | `error: service failed` |
 
 ---
 
