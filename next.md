@@ -1,78 +1,43 @@
-# SOP: Software Installation via Bash Script
+# Installation via Bash Script
 
-| Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
-|--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
-| Ajitesh Singh | 21-01-2026 | v1.0 | Ajitesh Singh | NA | NA | NA | NA |
+This document explains how to install software using a generic Bash script. The script supports multiple versions, upgrades, installation through package managers, and tarball-based installation. It is designed to provide a flexible and repeatable installation process across Linux environments.
 
 ---
 
-## Table of Contents
+## Overview
 
-- [Introduction](#introduction)
-- [Purpose](#purpose)
-- [Pre-requisites](#pre-requisites)
-- [Key Features](#key-features)
-- [Supported Installation Methods](#supported-installation-methods)
-- [Directory Structure](#directory-structure)
-- [Installation Using Package Manager](#installation-using-package-manager)
-- [Installation Using Tarball](#installation-using-tarball)
-- [Version Management and Upgrade](#version-management-and-upgrade)
-- [Validation and Verification](#validation-and-verification)
-- [Maintenance](#maintenance)
-- [Contact](#contact)
-- [References](#references)
+The Bash installer automates the installation of software by allowing users to:
+- Choose the software version to install
+- Install using a package manager or tarball
+- Upgrade existing installations
+- Validate the installation automatically
+
+This approach reduces manual effort and ensures consistent setup across systems.
 
 ---
 
-## Introduction
+## Supported Features
 
-This document describes a standard approach for installing software using a generic Bash script. The script supports multiple software versions, installation via package managers, tarball-based installations, and upgrade automation. It ensures consistent and repeatable installations across environments.
-
----
-
-## Purpose
-
-- Automate software installation using Bash  
-- Support multiple versions and upgrades  
-- Enable installation via package manager and tarball  
-- Reduce manual configuration errors  
-- Improve deployment consistency  
+| Feature | Description |
+|--------|-------------|
+| Multi-version support | Allows selection of specific versions |
+| Upgrade handling | Supports upgrading existing installations |
+| Package manager installation | Uses system package managers like apt or yum |
+| Tarball installation | Installs directly from compressed archives |
+| Validation | Verifies installation after setup |
+| Logging | Captures installation output |
 
 ---
 
-## Pre-requisites
+## Prerequisites
 
 | Requirement | Description |
 |-------------|-------------|
 | Operating System | Linux-based system |
-| Shell | Bash shell available |
+| Shell | Bash |
 | Privileges | sudo access |
-| Network | Internet access (optional for package installs) |
-| Tools | curl, wget, tar |
-
----
-
-## Key Features
-
-| Feature | Description |
-|---------|-------------|
-| Multi-Version Support | Install different versions |
-| Upgrade Handling | Upgrade existing installations |
-| Package Manager | Install via apt/yum |
-| Tarball Install | Install from compressed archive |
-| Validation | Automatic verification |
-| Logging | Installation logs |
-
----
-
-## Supported Installation Methods
-
-| Method | Description |
-|--------|-------------|
-| Package Manager | Install via system repositories |
-| Tarball | Install from compressed archive |
-| Custom Version | User-defined version selection |
-| Upgrade Mode | Replace existing version |
+| Tools | curl / wget, tar |
+| Network | Internet access for downloads |
 
 ---
 
@@ -87,29 +52,47 @@ installer/
 
 ---
 
-## Installation Using Package Manager
+## Configuration
 
-### Example Script
+Configuration values can be stored in a `.env` file or passed as environment variables.
+
+Example:
 
 ```bash
-#!/bin/bash
-PACKAGE_NAME="python3"
+SOFTWARE_NAME=python
+INSTALL_METHOD=package
+VERSION=3.11
+```
 
+---
+
+## Installation Using Package Manager
+
+This method installs software using the system package manager.
+
+Example snippet:
+
+```bash
 sudo apt update
-sudo apt install -y $PACKAGE_NAME
+sudo apt install -y python3
+```
 
-$PACKAGE_NAME --version
+Verify installation:
+
+```bash
+python3 --version
 ```
 
 ---
 
 ## Installation Using Tarball
 
-### Example Script
+This method installs software from a compressed archive.
+
+Example snippet:
 
 ```bash
-#!/bin/bash
-VERSION="3.11.1"
+VERSION=3.11.1
 URL="https://www.python.org/ftp/python/$VERSION/Python-$VERSION.tgz"
 
 wget $URL
@@ -120,60 +103,88 @@ make
 sudo make install
 ```
 
+Verify installation:
+
+```bash
+python3 --version
+```
+
 ---
 
-## Version Management and Upgrade
+## Version Selection
 
-### Select Version Dynamically
+Users can dynamically select the version during execution.
+
+Example:
 
 ```bash
 read -p "Enter version to install: " VERSION
 ```
 
-### Upgrade Example
+---
+
+## Upgrade Support
+
+If the software is already installed, the script can upgrade it.
+
+Package manager upgrade:
 
 ```bash
 sudo apt upgrade python3 -y
 ```
 
-or re-run tarball installer with newer version.
+Tarball upgrade:
+
+Re-run the installer with a newer version.
 
 ---
 
 ## Validation and Verification
 
-| Check | Command |
-|-------|---------|
-| Verify Installation | `python3 --version` |
-| Verify Path | `which python3` |
-| Verify Binary | `ls /usr/local/bin/python3` |
+| Validation Step | Command |
+|------------------|----------|
+| Check version | `python3 --version` |
+| Verify binary path | `which python3` |
+| Validate installation | `python3 -c "print('OK')"` |
 
 ---
 
-## Maintenance
+## Logging
 
-| Task | Command |
-|------|---------|
-| Update Packages | `sudo apt update && sudo apt upgrade` |
-| Cleanup Tar Files | `rm -rf Python-*` |
-| Logs Review | `cat logs/install.log` |
+Installation logs can be captured for troubleshooting.
+
+Example:
+
+```bash
+./install.sh | tee logs/install.log
+```
+
+---
+
+## Error Handling
+
+The script validates:
+- Network connectivity
+- Required tools availability
+- Installation success
+- Version compatibility
+
+If a failure occurs, the script exits with an error message.
 
 ---
 
 ## Contact
 
-| Name | Email Address | GitHub | URL |
-|------|---------------|--------|-----|
-| Ajitesh Singh | ajitesh.singh.snaatak@mygurukulam.co | ajitesh0007 | https://github.com/ajitesh0007 |
+| Name | Email | GitHub |
+|------|-------|--------|
+| Ajitesh Singh | ajitesh.singh.snaatak@mygurukulam.co | ajitesh0007 |
 
 ---
 
 ## References
 
-| Link | Description |
-|------|-------------|
-| https://www.gnu.org/software/bash/ | Bash Documentation |
-| https://www.python.org/downloads/source/ | Python Tarball Downloads |
-| https://ubuntu.com/server/docs | Ubuntu Documentation |
+- https://www.gnu.org/software/bash/
+- https://www.python.org/downloads/
+- https://ubuntu.com/server/docs
 
 ---
