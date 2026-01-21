@@ -204,7 +204,7 @@ journalctl -xe
 
 | Name | Email | GitHub |
 |------|--------|--------|
-| Ajitesh | ajitesh@example.com | ajitesh |
+| Ajitesh | ajitesh.singh.snaatak@mygurukulam.co | ajitesh0007 |
 
 ---
 
