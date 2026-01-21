@@ -2,7 +2,7 @@
 
 | Author | Created On | Version | Last Updated By | Internal Reviewer | Reviewer L0 | Reviewer L1 | Reviewer L2 |
 |--------|------------|---------|------------------|-------------------|-------------|-------------|-------------|
-| Ajitesh Singh | 21-01-2026 | v1.3 | Ajitesh Singh | NA | NA | NA | NA |
+| Ajitesh Singh | 21-01-2026 | v1 | Ajitesh Singh | NA | NA | NA | NA |
 
 ---
 
@@ -151,8 +151,7 @@ This document provides a Standard Operating Procedure (SOP) for frequently used 
 
 | Link | Description |
 |------|-------------|
-| https://linuxcommand.org | Linux command documentation |
-| https://man7.org/linux/man-pages | Linux manual pages |
-| https://ubuntu.com/server/docs | Ubuntu server documentation |
+| [https://linuxcommand.org](https://linuxcommand.org/lc3_man_page_index.php) | Linux command documentation |
+| [https://man7.org/linux/man-pages](https://linux.die.net/man/) | Linux manual pages |
 
 ---
