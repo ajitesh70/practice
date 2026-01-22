@@ -1,31 +1,19 @@
-# Installation via Bash Script
+# Python Installation via Generic Bash Script
 
-This document explains how to install software using a generic Bash script. The script supports multiple versions, upgrades, installation through package managers, and tarball-based installation. It is designed to provide a flexible and repeatable installation process across Linux environments.
+This documentation explains how to install Python using a generic Bash script.  
+The script supports installing multiple Python versions, upgrading existing installations, and installing Python either from a package manager or from a tarball source.
 
 ---
 
 ## Overview
 
-The Bash installer automates the installation of software by allowing users to:
-- Choose the software version to install
-- Install using a package manager or tarball
-- Upgrade existing installations
-- Validate the installation automatically
+The Bash installer provides a standardized way to install Python across Linux systems. Users can select the Python version and installation method during execution. The script automatically validates the installation and ensures consistency across environments.
 
-This approach reduces manual effort and ensures consistent setup across systems.
-
----
-
-## Supported Features
-
-| Feature | Description |
-|--------|-------------|
-| Multi-version support | Allows selection of specific versions |
-| Upgrade handling | Supports upgrading existing installations |
-| Package manager installation | Uses system package managers like apt or yum |
-| Tarball installation | Installs directly from compressed archives |
-| Validation | Verifies installation after setup |
-| Logging | Captures installation output |
+Supported capabilities:
+- Install multiple Python versions
+- Upgrade existing Python installation
+- Install using package manager (apt/yum)
+- Install using tarball (source build)
 
 ---
 
@@ -36,15 +24,15 @@ This approach reduces manual effort and ensures consistent setup across systems.
 | Operating System | Linux-based system |
 | Shell | Bash |
 | Privileges | sudo access |
-| Tools | curl / wget, tar |
-| Network | Internet access for downloads |
+| Network | Internet access |
+| Tools | curl or wget, tar |
 
 ---
 
 ## Directory Structure
 
 ```
-installer/
+python-installer/
 ├── install.sh
 ├── config.env
 └── logs/
@@ -54,23 +42,26 @@ installer/
 
 ## Configuration
 
-Configuration values can be stored in a `.env` file or passed as environment variables.
+The installer can accept configuration values from a configuration file or user input.
 
-Example:
+Example `config.env`:
 
 ```bash
-SOFTWARE_NAME=python
+PYTHON_VERSION=3.11
 INSTALL_METHOD=package
-VERSION=3.11
 ```
+
+Supported values:
+- `PYTHON_VERSION` → Desired Python version
+- `INSTALL_METHOD` → `package` or `tarball`
 
 ---
 
 ## Installation Using Package Manager
 
-This method installs software using the system package manager.
+This method installs Python using the system package manager.
 
-Example snippet:
+Example:
 
 ```bash
 sudo apt update
@@ -87,9 +78,9 @@ python3 --version
 
 ## Installation Using Tarball
 
-This method installs software from a compressed archive.
+This method installs Python from source.
 
-Example snippet:
+Example:
 
 ```bash
 VERSION=3.11.1
@@ -111,21 +102,24 @@ python3 --version
 
 ---
 
-## Version Selection
+## Multi-Version Support
 
-Users can dynamically select the version during execution.
+The script allows installing multiple Python versions on the same system.
 
 Example:
 
 ```bash
-read -p "Enter version to install: " VERSION
+python3.8 --version
+python3.11 --version
 ```
+
+Users can switch versions using symbolic links or update-alternatives if configured.
 
 ---
 
 ## Upgrade Support
 
-If the software is already installed, the script can upgrade it.
+The installer supports upgrading Python to a newer version.
 
 Package manager upgrade:
 
@@ -135,17 +129,19 @@ sudo apt upgrade python3 -y
 
 Tarball upgrade:
 
-Re-run the installer with a newer version.
+Re-run the installer with a newer version number.
 
 ---
 
-## Validation and Verification
+## Validation
 
-| Validation Step | Command |
-|------------------|----------|
+After installation, validate the setup:
+
+| Validation | Command |
+|------------|----------|
 | Check version | `python3 --version` |
-| Verify binary path | `which python3` |
-| Validate installation | `python3 -c "print('OK')"` |
+| Verify path | `which python3` |
+| Test execution | `python3 -c "print('Python OK')"` |
 
 ---
 
@@ -161,18 +157,6 @@ Example:
 
 ---
 
-## Error Handling
-
-The script validates:
-- Network connectivity
-- Required tools availability
-- Installation success
-- Version compatibility
-
-If a failure occurs, the script exits with an error message.
-
----
-
 ## Contact
 
 | Name | Email | GitHub |
@@ -183,8 +167,8 @@ If a failure occurs, the script exits with an error message.
 
 ## References
 
-- https://www.gnu.org/software/bash/
 - https://www.python.org/downloads/
-- https://ubuntu.com/server/docs
+- https://docs.python.org/3/
+- https://www.gnu.org/software/bash/
 
 ---
