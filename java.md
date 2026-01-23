@@ -1,12 +1,9 @@
 # Installation Guide – Step by Step Installation Guide for Java
 
-**Author:** Ajitesh Singh  
-**Created On:** 21-01-2026  
-**Version:** v1  
-**Last Updated By:** Ajitesh Singh  
-**Reviewer L0:** Komal Jaiswal  
-**Reviewer L1:** Akshit Kapil  
-**Reviewer L2:** Mahesh  
+| Author | Created On | Version | Last Updated By | Reviewer L0 | Reviewer L1 | Reviewer L2 |
+|--------|------------|---------|------------------|-------------|-------------|-------------|
+| Ajitesh Singh | 21-01-2026 | v1 | Ajitesh Singh | Komal Jaiswal | Akshit Kapil | Mahesh |
+
 
 ---
 
