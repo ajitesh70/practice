@@ -220,13 +220,13 @@ Logs (application dependent):
 
 ## 16. FAQs
 
-** Q1.Is Java free?**  
+**Q1.Is Java free?**  
 Yes, OpenJDK is open-source and free.
 
-** Q2.Can Java run on cloud platforms?**  
+**Q2.Can Java run on cloud platforms?**  
 Yes, Java runs on AWS, Azure, GCP, and on-prem.
 
-** Q3.Which version should I use?**  
+**Q3.Which version should I use?**  
 Java 17 LTS is recommended.
 
 ---
