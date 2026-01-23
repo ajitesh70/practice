@@ -528,14 +528,14 @@ target/surefire-reports/
 
 ## FAQs
 
-**Is Maven free?**
-Yes, it is open-source under Apache License 2.0.
+** Q1.Is Maven free?**
+-Yes, it is open-source under Apache License 2.0.
 
-**Can this be used for any Java project?**
-Yes, for all Maven-based projects.
+** Q2.Can this be used for any Java project?**
+-Yes, for all Maven-based projects.
 
-**Does pom.xml manage runtime behavior?**
-Primarily build and dependency management.
+** Q3.Does pom.xml manage runtime behavior?**
+-Primarily build and dependency management.
 
 ---
 
