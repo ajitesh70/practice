@@ -7,25 +7,26 @@
 
 ---
 
+
 ##  Table of Contents
-1. Introduction  
-2. Purpose  
-3. Key Features  
-4. Getting Started  
-5. Software Overview  
-6. System Requirements  
-7. Important Ports  
-8. Dependencies  
-9. Installation  
-10. Configuration  
-11. Maintenance  
-12. Monitoring  
-13. Disaster Recovery  
-14. High Availability  
-15. Troubleshooting  
-16. FAQs  
-17. Contact Information  
-18. References  
+- [Introduction](#1-introduction)
+- [Purpose](#2-purpose)
+- [Key Features](#3-key-features)
+- [Getting Started](#4-getting-started)
+- [Software Overview](#5-software-overview)
+- [System Requirements](#6-system-requirements)
+- [Important Ports](#7-important-ports)
+- [Dependencies](#8-dependencies)
+- [Installation](#9-installation)
+- [Configuration](#10-configuration)
+- [Maintenance](#11-maintenance)
+- [Monitoring](#12-monitoring)
+- [Disaster Recovery](#13-disaster-recovery)
+- [High Availability](#14-high-availability)
+- [Troubleshooting](#15-troubleshooting)
+- [FAQs](#16-faqs)
+- [Contact Information](#17-contact-information)
+- [References](#18-references)
 
 ---
 
