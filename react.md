@@ -1,6 +1,12 @@
 # React JS & NPM Documentation
 
-## 📌 Table of Contents
+| Author | Created On | Version | Last Updated By | Reviewer L0 | Reviewer L1 | Reviewer L2 |
+|--------|------------|---------|------------------|-------------|-------------|-------------|
+| Ajitesh Singh | 21-01-2026 | v1 | Ajitesh Singh | Komal Jaiswal | Akshit Kapil | Mahesh |
+
+---
+
+##  Table of Contents
 - [Introduction](#introduction)
 - [What is React JS](#what-is-react-js)
 - [Why React JS](#why-react-js)
@@ -10,6 +16,7 @@
 - [Key Features of NPM](#key-features-of-npm)
 - [React and NPM Relationship](#react-and-npm-relationship)
 - [Common Commands](#common-commands)
+- [References](#references)
 
 ---
 
@@ -76,7 +83,7 @@ NPM allows developers to manage project dependencies and automate tasks using sc
 ## React and NPM Relationship
 NPM is used to install and manage React and its related packages.
 
-Example:
+Install React:
 ```bash
 npm install react react-dom
 ```
@@ -115,3 +122,13 @@ npm run build
 
 ---
 
+## References
+
+| Link | Description |
+|------|-------------|
+| https://react.dev | Official React Documentation |
+| https://docs.npmjs.com | Official NPM Documentation |
+| https://nodejs.org | Node.js Official Website |
+| https://create-react-app.dev | Create React App Guide |
+
+---
