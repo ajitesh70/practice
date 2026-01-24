@@ -6,7 +6,7 @@
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 - [Introduction](#introduction)
 - [Purpose](#purpose)
 - [CD Workflow Overview](#cd-workflow-overview)
