@@ -1,4 +1,4 @@
-# React JS & NPM Documentation
+# NPM Documentation
 
 | Author | Created On | Version | Last Updated By | Reviewer L0 | Reviewer L1 | Reviewer L2 |
 |--------|------------|---------|------------------|-------------|-------------|-------------|
@@ -6,119 +6,101 @@
 
 ---
 
-##  Table of Contents
+## 📌 Table of Contents
 - [Introduction](#introduction)
-- [What is React JS](#what-is-react-js)
-- [Why React JS](#why-react-js)
-- [Key Features of React JS](#key-features-of-react-js)
 - [What is NPM](#what-is-npm)
 - [Why NPM](#why-npm)
 - [Key Features of NPM](#key-features-of-npm)
-- [React and NPM Relationship](#react-and-npm-relationship)
 - [Common Commands](#common-commands)
+- [Contact Information](#contact-information)
 - [References](#references)
 
 ---
 
 ## Introduction
-This document explains **React JS** and **NPM** including what they are, why they are used, and their key features. It is written in README.md format for easy usage in documentation, GitHub repositories, and learning references.
-
----
-
-## What is React JS
-React JS is an open-source JavaScript library developed by Facebook (Meta) for building user interfaces, especially single-page applications. It uses a component-based architecture where the UI is broken into reusable components.
-
-React improves performance using a Virtual DOM that updates only the changed parts of the UI instead of reloading the entire page.
-
----
-
-## Why React JS
-- Fast rendering using Virtual DOM  
-- Reusable components reduce development time  
-- Easy to build scalable applications  
-- Strong community and ecosystem  
-- Easy integration with backend APIs  
-- Supports modern development workflows and CI/CD pipelines  
-
----
-
-## Key Features of React JS
-- Component-based architecture  
-- Virtual DOM  
-- One-way data binding  
-- Reusable UI components  
-- SEO friendly (with server-side rendering)  
-- Easy testing and debugging  
-- Rich ecosystem of libraries  
+This document explains **NPM (Node Package Manager)** including what it is, why it is used, and its key features. It is written in README.md format for documentation, learning, and project reference.
 
 ---
 
 ## What is NPM
-NPM (Node Package Manager) is a package manager used to install, manage, and update JavaScript libraries and tools. It comes bundled with Node.js.
+NPM (Node Package Manager) is a package manager used to install, manage, and update JavaScript libraries and tools. It comes bundled with Node.js and helps developers manage dependencies, versions, and scripts in a structured way.
 
-NPM allows developers to manage project dependencies and automate tasks using scripts.
+NPM maintains a file called `package.json` that stores project metadata and dependency information.
 
 ---
 
 ## Why NPM
-- Automatically installs project dependencies  
-- Manages package versions and compatibility  
+- Automatically installs required libraries and tools  
+- Manages dependency versions and compatibility  
+- Simplifies project setup and onboarding  
 - Supports automation using scripts  
 - Provides access to millions of open-source packages  
-- Integrates easily with frontend and backend frameworks  
+- Ensures consistent builds across environments  
+- Integrates easily with CI/CD pipelines  
 
 ---
 
 ## Key Features of NPM
 - Package installation and upgrades  
-- Dependency resolution  
-- Version locking using package-lock.json  
-- Script execution  
+- Dependency resolution and conflict management  
+- Version locking using `package-lock.json`  
+- Script execution using `npm run`  
 - Global and local package management  
 - Secure package publishing  
-- CI/CD compatibility  
-
----
-
-## React and NPM Relationship
-NPM is used to install and manage React and its related packages.
-
-Install React:
-```bash
-npm install react react-dom
-```
-
-Create a new React project:
-```bash
-npx create-react-app myapp
-```
-
-NPM manages all dependencies required by React applications.
+- Easy rollback of package versions  
+- Works with frontend and backend frameworks  
 
 ---
 
 ## Common Commands
 
-Check Node and NPM version:
+Initialize a project:
 ```bash
-node -v
+npm init
+```
+
+Install a package:
+```bash
+npm install express
+```
+
+Install globally:
+```bash
+npm install -g nodemon
+```
+
+Remove a package:
+```bash
+npm uninstall express
+```
+
+Update packages:
+```bash
+npm update
+```
+
+List installed packages:
+```bash
+npm list
+```
+
+Run scripts:
+```bash
+npm run start
+```
+
+Check NPM version:
+```bash
 npm -v
 ```
 
-Install dependencies:
-```bash
-npm install
-```
+---
 
-Start React application:
-```bash
-npm start
-```
+## Contact Information
 
-Build application:
-```bash
-npm run build
-```
+| Name | Email |
+|------|-------|
+| Ajitesh Singh | ajitesh.singh.snaatak@mygurukulam.co |
 
 ---
 
@@ -126,9 +108,8 @@ npm run build
 
 | Link | Description |
 |------|-------------|
-| https://react.dev | Official React Documentation |
 | https://docs.npmjs.com | Official NPM Documentation |
 | https://nodejs.org | Node.js Official Website |
-| https://create-react-app.dev | Create React App Guide |
+| https://www.npmjs.com | NPM Package Registry |
 
 ---
