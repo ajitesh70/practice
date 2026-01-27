@@ -74,7 +74,8 @@ It ensures fast, consistent, and reliable releases by using automation tools lik
 
 ## CD Workflow Overview
 
-<img width="387" height="656" alt="image" src="https://github.com/user-attachments/assets/cf49617d-e6fb-4e6a-ad66-5b3a9c4a6ed3" />
+<img width="387" height="656" alt="Screenshot 2026-01-27 100954" src="https://github.com/user-attachments/assets/aa5fb759-a3a5-4af7-9417-596ad7bc9c82" />
+
 
 ## Directory Structure
 
